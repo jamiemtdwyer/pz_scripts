@@ -1,0 +1,16 @@
+# /home/jd/.config/tmuxinator/zomboid.yml
+
+name: zomboid
+root: ~/
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+attach: false
+
+windows:
+  - server:
+      layout: main-vertical    
+      panes:
+        - tail -f ~/Zomboid/server-console.txt
+        - htop
+        - watch sensors
+        - ~/connect-rcon.sh
